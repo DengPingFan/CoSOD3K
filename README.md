@@ -24,7 +24,7 @@ Co-salient object detection (CoSOD) is a newly emerging and rapidly growing bran
 </p>
 
 <p align="center">
-    <img src="figures/CoSOD3K2.png" width="100%" /> <br/>
+    <img src="figures/CoSOD3k2.png" width="100%" /> <br/>
     <em> 
     Figure 2: The 160 Objects from our CoSOD3k.
     </em>
