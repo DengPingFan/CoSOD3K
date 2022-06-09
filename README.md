@@ -7,7 +7,7 @@
 	- [Table of Contents](#table-of-contents)
 	- [Abstract](#abstract)
 	- [CoSOD Dataset Comparision](#cosod-dataset-comparision)
-	- [Statistics of DAVSOD](#statistics-of-davsod)
+	- [Statistics](#statistics)
 	- [Downloads](#downloads)
 	- [Usage](#usage)
 	- [Results](#results)
@@ -27,6 +27,14 @@ Co-salient object detection (CoSOD) is a newly emerging and rapidly growing bran
     <img src="figures/CoSOD3k2.png" width="100%" /> <br/>
     <em> 
     Figure 2: The 160 Objects from our CoSOD3k.
+    </em>
+</p>
+
+## Statistics
+<p align="center">
+    <img src="figures/CoSOD3k3.png" width="100%" /> <br/>
+    <em> 
+    Table 1: Statistics for size and number of instances/objects in existing datasets.’-’ indicates that the dataset only contains object-level annotations, so, the number of instances is only one.
     </em>
 </p>
 
