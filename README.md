@@ -17,14 +17,14 @@ Co-salient object detection (CoSOD) is a newly emerging and rapidly growing bran
 
 ## CoSOD Dataset Comparision
 <p align="center">
-    <img src="figures/CoSOD3K.png" width="100%" /> <br />
+    <img src="figures/CoSOD3K.png" width="100%" /> <br/>
     <em> 
     Figure 1: Different salient object detection (SOD) tasks. (a) Traditional SOD [78]. (b) Within image co-salient object detection (CoSOD) [93], where common salient objects are detected from a single image. (c) Existing CoSOD, where salient objects are detected according to a pair [52] or a group [85] of images with similar appearances. (d) The proposed CoSOD in the wild, which requires a large amount of semantic context, making it more challenging than existing CoSOD.
     </em>
 </p>
 
 <p align="center">
-    <img src="figures/CoSOD3K2.png" width="100%" /> <br />
+    <img src="figures/CoSOD3K2.png" width="100%" /> <br/>
     <em> 
     Figure 2: The 160 Objects from our CoSOD3k.
     </em>
