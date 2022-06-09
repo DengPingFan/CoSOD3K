@@ -3,7 +3,7 @@
 'Taking a Deeper Look at Co-Salient Object Detection'
 
 ### Table of Contents
-- [CoSOD3K (CVPR2020)) <a name="headin"></a>](#CoSOD3K-cvpr2020-)
+- [CoSOD3K (CVPR2020) <a name="headin"></a>](#CoSOD3K-cvpr2020-)
 	- [Table of Contents](#table-of-contents)
 	- [Abstract](#abstract)
 	- [Notion of saliency shift](#notion-of-saliency-shift)
