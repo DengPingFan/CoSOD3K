@@ -53,6 +53,9 @@ Co-salient object detection (CoSOD) is a newly emerging and rapidly growing bran
 ## SOTA Models
 xxxx
 
+## Results
+xxxx
+
 ## Citation
 If you find this useful, please cite the following work:
 
