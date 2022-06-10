@@ -51,9 +51,24 @@ Co-salient object detection (CoSOD) is a newly emerging and rapidly growing bran
 |Overall | | |  |[Baidu Pan: 6mvn](https://pan.baidu.com/s/1CJ1DTjMl6D9XvS618sKJ_g)|[Google (1.4G)](https://drive.google.com/drive/folders/1OdD4yCoMJHmBhJR90OUT8MkBt-LJggHV?usp=sharing)|
 
 ## SOTA Models
+<p align="center">
+    <img src="figures/Co-SOD3K-Survey.png" width="100%"/> <br/>
+    <em> 
+    Table 2: Summaryof34classicandcutting-edgeCoSODapproaches.Trainingset:PV=PASCALVOC07[17].CR=Coseg-Rep[15]. DO=DUT-OMRON[86].COS=COCO subset.MainComponent:IMC=Intra-ImageContrast.IGS:Intra-GroupSeparability.IGC: Intra-GroupConsistency.SPL:Self-pacedlearning.CH:ColorHistogram.GMR:Graph-basedManifoldRanking.CAE:Convolutional AutoEncoder.HSR:High-spatialResolution.FSM:fivesaliencymodelincludingCBCS[24],RC[12],DCL[49],RFCN[76],DWSI[89]. SL.=SuperviseLevel.W=Weakly-supervised.S=Supervised.U=Unsupervised.Sp.:Whetherornotsuperpixeltechniquesareused. Po.:Whetherornotproposalalgorithmsareutilized.Ed.:Whetherornotedgefeaturesareexplicitlyused.Post.:Whetherornotpostprocessingmethods,suchas,CRF,GraphCut(GCut),oradaptive/constantthreshold(THR),areintroduced.‡denotesdeepmodels.More detailsaboutthesemodelscanbefoundintwosurveypapers[14,91].
+    </em>
+</p>
+
+
 xxxx
 
 ## Results
+<p align="center">
+    <img src="figures/Co-SOD3K-Results.png" width="100%"/> <br/>
+    <em> 
+    Figure 3: Qualitative examples of existing top-10 models on CoSOD3k.
+    </em>
+</p>
+
 xxxx
 
 ## Citation
