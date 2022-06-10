@@ -51,17 +51,93 @@ Co-salient object detection (CoSOD) is a newly emerging and rapidly growing bran
 |Overall | | |  |[Baidu Pan: 6mvn](https://pan.baidu.com/s/1CJ1DTjMl6D9XvS618sKJ_g)|[Google (1.4G)](https://drive.google.com/drive/folders/1OdD4yCoMJHmBhJR90OUT8MkBt-LJggHV?usp=sharing)|
 
 ## SOTA Models
-<p align="center">
-    <img src="figures/Co-SOD3K-Survey.png" width="100%"/> <br/>
-    <em> 
-    Table 2: Summaryof34classicandcutting-edgeCoSODapproaches.Trainingset:PV=PASCALVOC07[17].CR=Coseg-Rep[15]. DO=DUT-OMRON[86].COS=COCO subset.MainComponent:IMC=Intra-ImageContrast.IGS:Intra-GroupSeparability.IGC: Intra-GroupConsistency.SPL:Self-pacedlearning.CH:ColorHistogram.GMR:Graph-basedManifoldRanking.CAE:Convolutional AutoEncoder.HSR:High-spatialResolution.FSM:fivesaliencymodelincludingCBCS[24],RC[12],DCL[49],RFCN[76],DWSI[89]. SL.=SuperviseLevel.W=Weakly-supervised.S=Supervised.U=Unsupervised.Sp.:Whetherornotsuperpixeltechniquesareused. Po.:Whetherornotproposalalgorithmsareutilized.Ed.:Whetherornotedgefeaturesareexplicitlyused.Post.:Whetherornotpostprocessingmethods,suchas,CRF,GraphCut(GCut),oradaptive/constantthreshold(THR),areintroduced.‡denotesdeepmodels.More detailsaboutthesemodelscanbefoundintwosurveypapers[14,91].
-    </em>
-</p>
 
+#### News
 
-xxxx
+|      Model       |  Pub.   | Year |      #Training       |           Training set            |               Main Component               | SL.  | Sp.  | Po.  | Ed.  | Post. |
+| :--------------: | :-----: | :--: | :------------------: | :-------------------------------: | :----------------------------------------: | :--: | :--: | :--: | :--: | :---: |
+| WPL<sup>T</sup>  |  UIST   | 2010 |                      |                                   |   Morphological, Translational Alignment   |  U   |      |      |      |       |
+| PCSD<sup>T</sup> |  ICIP   | 2010 |       120,000        |          8*8 image patch          |        Sparse feature, Filter Bank         |  W   |      |      |      |       |
+| IPCS<sup>T</sup> |   TIP   | 2011 |                      |                                   |         Ncut, co-multilayer Graph          |  U   |  √   |      |      |       |
+| CBCS<sup>T</sup> |   TIP   | 2013 |                      |                                   |     Contrast/Spatial/Corresponding Cue     |  U   |      |      |      |       |
+|  MI<sup>T</sup>  |   TMM   | 2013 |                      |                                   | Feature/Images Pyramid, Multi-scale Voting |  U   |  √   |      |      | GCut  |
+| CSHS<sup>T</sup> |   SPL   | 2013 |                      |                                   |   Hierarchical Segmentation, Contour Map   |  U   |      |      |  √   |       |
+| ESMG<sup>T</sup> |   SPL   | 2014 |                      |                                   |   Efficient Manifold Ranking 184\], OTSU   |  U   |      |      |      |       |
+|  BR<sup>T</sup>  |   MM    | 2014 |                      |                                   |  Common/Center Cue, Global Correspondence  |  U   |  √   |      |      |       |
+| SACS<sup>T</sup> |   TIP   | 2014 |                      |                                   |   Self-adaptive Weight, Low Rank Matrix    |  U   |  √   |      |      |       |
+|       DIM        |  TNNLS  | 2015 |     1,000+9,963      |              ASD+PV               |     SDAE model, Contrast/Object Prior      |  S   |  √   |      |      |       |
+|       CODW       |  IJCV   | 2016 |                      |        ImageNet pre-train         |        SermaNet, RBM, IMC, IGS, IGC        |  W   |  √   |  √   |      |       |
+|      SP-MIL      |  TPAMI  | 2017 |    (240+643)•10%     |          MSRC-V1+iCoseg           |       SPL 1971, SVM, GIST 1691, CNNs       |  W   |  √   |      |      |       |
+|        GD        |  IJCAI  | 2017 |        9,213         |              MSCOCO               |     VGGNet16 \[681, Group-wise Feature     |  S   |      |      |      |       |
+|      MVSRCC      |   TIP   | 2017 |                      |                                   |    LBP, SIFT \[611, CH, Bipartite Graph    |      |  √   |  √   |      |       |
+|       UMLF       |  TCSVT  | 2017 |    (240+2015)*50%    |        MSRC-V1 + CoSa12015        |       SVM, OMR 186\], metric teaming       |  S   |  √   |      |      |       |
+|       DML        |  BMVC   | 2018 | 10,000+6,232+ 5,168  |      MIOK+THUR-15K 1111 +DO       |            CAE, HSR, Multistage            |  S   |      |      |      |       |
+|       DWSI       |  AAAI   | 2018 |                      |                                   |    EdgeBox \[106\], Low-rank Matrix, CH    |  S   |      |  √   |      |       |
+|      GONet       |  ECCV   | 2018 |                      |        ImageNet pre-train         |  ResNet-50 \[281, Graphical Optimization   |  W   |  √   |      |      |  CRF  |
+|       COC        |  IJCAI  | 2018 |                      |        ImageNet pre-train         |     ResNet-50 \[281, Co-attention Loss     |  W   |      |  √   |      |  CRF  |
+|       FASS       |   MM    | 2018 |                      |        ImageNet pre-train         |    DHS 156\]/VGGNet. Graph optimization    |  W   |  √   |      |      |       |
+| PJO<sup>T</sup>  |   TIP   | 2018 |                      |                                   |         Energy Minimization, BoWs          |  U   |  √   |      |      |       |
+|       SPIG       |   TIP   | 2018 | 10,000+210+2,015+240 |    MIOK+IPCS+CoSal2015+ MSRC-V    |       DeepLab, Graph Representation        |  S   |  √   |      |      |       |
+|       QGF        |   TMM   | 2018 |                      |        ImageNet pre-traln         |   Dense Correspondence, Quality Measure    |  S   |  √   |      |      |  THR  |
+|       EHL        |   NC    | 2019 |         643          |              iCoseg               |               GoogLeNet, FSM               |  S   |  √   |      |      |       |
+|       IML        |   NC    | 2019 |         3624         |          CoSa12015+PV+CR          |                  VGGNet16                  |  S   |  √   |      |      |       |
+|       DGFC       |   TIP   | 2019 |      \>200,000       |            MSCOCO 1551            |        VGGNet16, Group-wise Feature        |  S   |  √   |      |      |       |
+|      RCANet      |  IJCAI  | 2019 |      \>200,000       | MSCOCO+COS+iCoseg+ CoSa12015+MSRC |         VGGNet16, Recurrent Units          |  S   |      |      |      |  THR  |
+|        GS        |  AAAI   | 2019 |       200,000        |             COCO-SEG              |    VGGNet19, Co-category Classification    |  S   |      |      |      |       |
+|      MGCNet      |  ICME   | 2019 |                      |                                   |        Graph Convolutional Networks        |  S   |  √   |      |      |       |
+|      MGLCN       |   MM    | 2019 |         N/A          |                N/A                |   VGGNet16, PiCANet, Inter-/Intra-graph    |  S   |  √   |      |      |       |
+|        HC        |   MM    | 2019 |         N/A          |                N/A                |     VAE-Net, Hierarchical Consistency      |  S   |  √   |  √   |      |  CRF  |
+|       CSMG       |  CVPR   | 2019 |        25,00         |                MB                 |    VGGNet16, Shared Superpixel Feature     |  S   |  √   |      |      |       |
+|     DeepCO3      |  CVPR   | 2019 |        10,000        |               MIOK                |      SVFSaI / VGGNet, Co-peak Search       |  W   |      |  √   |      |       |
+|       GWD        |  ICCV   | 2019 |      \>200,000       |              MSCOCO               |      VGGNet19 , RNN, Group-wise Loss       |  S   |      |      |      |  THR  |
+|      GCAGC       |  CVPR   | 2020 |      \>200,000       |             COCO-SEG              |                Graph Model                 |  S   |      |      |      |       |
+|       GICD       |  ECCV   | 2020 |        8,250         |            DUTS\_class            |                  Gradient                  |  S   |      |      |      |       |
+|      ICNet       | NeurIPS | 2020 |        9,213         |              COCO-9k              |             External SOD Model             |  S   |      |      |      |       |
+|     CoADNet      | NeurIPS | 2020 |      \>200,000       |       DUTS\_class+COCO-SEG        |                Group Mining                |  S   |      |      |      |       |
+|    CoSformer     |  arXiv  | 2021 |      \>200,000       |       DUTS\_class+COCO-SEG        |                Transformer                 |  S   |      |      |      |       |
+|     CoEG-Net     |  TPAMI  | 2021 |        8,250         |            DUTS\_class            |                    PCA                     |  S   |      |      |      |       |
+|     DeepACG      |  CVPR   | 2021 |      \>200,000       |             COCO-SEG              |        Gromov-Wasserstein Distance         |  S   |      |      |      |       |
+|      GCoNet      |  CVPR   | 2021 |        8,250         |            DUTS\_class            |        Group Collaborative Learning        |  S   |      |      |      |       |
+|       CADC       |  ICCV   | 2021 |     8,250+9,213      |        DUTS\_class+COCO-9k        |            Dynamic Convolution             |  S   |      |      |      |       |
+|       DCFM       |  CVPR   | 2022 |        9,213         |              COCO-9k              |    Prototype, self-contrastive learning    |  S   |      |      |      |       |
+|       UFO        |  arXiv  | 2022 |      \>200,000       |             COCO-SEG              |                Transformer                 |  S   |      |      |      |       |
+|     GCoNet+      |  arXiv  | 2022 |      \>200,000       |  DUTS\_class, COCO-9k, COCO-SEG   |   Inter-group Learning, Metric Learning    |  S   |      |      |      |       |
+
+> WPL<sup>T</sup> means the WPL is a traditional method, instead of a deep method.
 
 ## Results
+
+#### SOTA:
+
+Refer to the [CoSOD task in papers-with-code](https://paperswithcode.com/task/co-saliency-detection).
+
+#### Predicted Maps
+
+|  Model   |                          Baidu Pan                           |                         Google Drive                         |
+| :------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|   CBCS   | [Baidu-Disk](https://web.archive.org/web/20220125070207/https://pan.baidu.com/s/1nfwmzj9UuYGyFVijT6Uwzg) (gtse) | [Google-Drive](https://web.archive.org/web/20220125070207/https://drive.google.com/file/d/19gPOFNYXvTmSqWnLeOtq9rkDyB8dXXMl/view?usp=sharing) |
+|   CODR   | [Baidu-Disk](https://web.archive.org/web/20220125070207/https://pan.baidu.com/s/1Cs6Q4YAlG2IVzAaQhi_Oew) (qfks) | [Google-Drive](https://web.archive.org/web/20220125070207/https://drive.google.com/file/d/1gPm17eGISZ0EA8_HkCPQk6horeUwwNeQ/view?usp=sharing) |
+|   CPD    | [Baidu-Disk](https://web.archive.org/web/20220125070207/https://pan.baidu.com/s/1ViUFlkr6MT_98eSYhJkRQg) (jxkk) | [Google-Drive](https://web.archive.org/web/20220125070207/https://drive.google.com/file/d/145FCYr2RVpQ7xOHZNhVa-J81G6FoqhXD/view?usp=sharing) |
+|   CSHS   | [Baidu-Disk](https://web.archive.org/web/20220125070207/https://pan.baidu.com/s/1jDHk1rYdzj6cZVdRilxowg) (wda4) | [Google-Drive](https://web.archive.org/web/20220125070207/https://drive.google.com/file/d/1BRWNFboc9AhChQq5NnA-y11xVTiEFtaR/view?usp=sharing) |
+|   CSMG   | [Baidu-Disk](https://web.archive.org/web/20220125070207/https://pan.baidu.com/s/1BGoIOrWutFeU4EXtqsgG6Q) (gwm6) | [Google-Drive](https://web.archive.org/web/20220125070207/https://drive.google.com/file/d/1fgeCS2JEskuRSuZkJHOq2xxi1haZFYFa/view?usp=sharing) |
+|   DIM    | [Baidu-Disk](https://web.archive.org/web/20220125070207/https://pan.baidu.com/s/1KDK2hMP4v2QIifqYZ2zRqg) (2hgk) | [Google-Drive](https://web.archive.org/web/20220125070207/https://drive.google.com/file/d/1yY_De6Nbip4lzRMxXhU5LNh-K036BRJ7/view?usp=sharing) |
+|  EGNet   | [Baidu-Disk](https://web.archive.org/web/20220125070207/https://pan.baidu.com/s/16jSIRvSUPL14qIc2DMqyQA) (tkna) | [Google-Drive](https://web.archive.org/web/20220125070207/https://drive.google.com/file/d/1D1XSpR3y-139Gvy_YaWKfxFZaHeA9ryv/view?usp=sharing) |
+|   ESMG   | [Baidu-Disk](https://web.archive.org/web/20220125070207/https://pan.baidu.com/s/1q4BsnDeYsrFVHrE8GdnZbQ) (hxqb) | [Google-Drive](https://web.archive.org/web/20220125070207/https://drive.google.com/file/d/1yEdgTzVHtbUOESHzdxDqIZ6OM2F2uw1l/view?usp=sharing) |
+|   IML    | [Baidu-Disk](https://web.archive.org/web/20220125070207/https://pan.baidu.com/s/1OYrdSLNBEuUzJRqsw-Pc5g) (7m1c) | [Google-Drive](https://web.archive.org/web/20220125070207/https://drive.google.com/file/d/1CvW8roAkBXTM62DzSq03AyzaGSMW2N56/view?usp=sharing) |
+|   UMLF   | [Baidu-Disk](https://web.archive.org/web/20220125070207/https://pan.baidu.com/s/1aNvZ0CiI3cj0VpSDrIGVQw) (eqpw) | [Google-Drive](https://web.archive.org/web/20220125070207/https://drive.google.com/file/d/1tNwd_EFN-bMrclwCMOZYJHxAI-MkXMH8/view?usp=sharing) |
+|  GCAGC   | [Baidu-Disk](https://pan.baidu.com/s/1xFPn2PiWT3wgR6OEHhlczg) (ij29) | [Google-Drive](https://drive.google.com/drive/folders/1EOnukW5iRbTe3liblrl0IGavzI8mXJz5?usp=sharing) |
+|   GICD   | [Baidu-Disk](https://pan.baidu.com/s/1P35BdU8EFJX9JK9tEGTa1Q) (puji) | [Google-Drive](https://drive.google.com/drive/folders/1FDwIn2IS_E23mbcuBbezg-9-pUg92EGY?usp=sharing) |
+|  ICNet   | [Baidu-Disk](https://pan.baidu.com/s/1WFQxeIOjOiByiFYHLpuytA) (xwcv) | [Google-Drive](https://drive.google.com/file/d/1px4tPVWAgbBPMt6Rp23oNwWz8Ulj6pmX/view?usp=sharing) |
+| CoADNet  | [Baidu-Disk](https://pan.baidu.com/s/1A9TFQ6yC73ulR6UmJ4QMCw) (MVPL) |                                                              |
+| Co-EGNet | [Baidu-Disk](https://pan.baidu.com/s/19hIlViLbby-a7vQw17ZTVw) (f4p3) | [Google-Drive](https://drive.google.com/file/d/1AK9UNR5mLHQakOTkRawcKSDg8YwIu-xJ/view?usp=sharing) |
+|  GCoNet  |                                                              | [Google-Drive](https://drive.google.com/file/d/17LgbcwGNK1DFl9jRAoMxF2796YlQYR4a/view?usp=sharing) |
+|   CADC   | [Baidu-Disk](https://pan.baidu.com/s/1bkCrqsOzNAgH-VSM0p7fMA) (i59u) | [Google-Drive](https://drive.google.com/file/d/1LBBQOBeasn6O2caccs5t1e26ilv-d62h/view?usp=sharing) |
+|   DCFM   |                                                              | [Google-Drive](https://drive.google.com/file/d/1wGeNHXFWVSyqvmL4NIUmEFdlHDovEtQR/view?usp=sharing) |
+|   UFO    |                                                              | [Google-Drive](https://drive.google.com/drive/folders/1QCr0zCCIsBC7JEHBS6A1O3V2JIpEAHyr?usp=sharing) |
+| GCoNet+  |                                                              | [Google-Drive](https://drive.google.com/drive/folders/1QpqHJKzj1aFddqNHb6bDbVOXTWlowb14?usp=sharing) |
+
+#### Qualitative Results
+
 <p align="center">
     <img src="figures/Co-SOD3K-Results.png" width="100%"/> <br/>
     <em> 
@@ -69,7 +145,7 @@ xxxx
     </em>
 </p>
 
-xxxx
+
 
 ## Citation
 If you find this useful, please cite the following work:
